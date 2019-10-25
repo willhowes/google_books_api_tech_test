@@ -8,12 +8,11 @@
 
 ##### Attributes
 
-- text of query (i.e. the user's input)
+- text of query (i.e. the user's input), required on instantiation
 - list (of 5 book objects max)
 
 ##### Methods
 
-- receive query test (i.e. from user)
 - make API request (to Google Books API)
 - add result of API request to the list
 

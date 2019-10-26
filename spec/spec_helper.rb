@@ -15,11 +15,11 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'webmock/rspec'
+require 'json'
 WebMock.disable_net_connect!(allow_localhost: true)
-API_KEY = open('config/.api_key').read()
 
-
-STUBBED_RESPONSE = open('spec/stubbed_response.json').read()
+file = File.open "spec/stubbed_response.json"
+stubbed_response = JSON.load file
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -34,7 +34,7 @@ RSpec.configure do |config|
      'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
      'User-Agent'=>'Ruby'
       }).
-      to_return(status: 200, body: JSON.generate(STUBBED_RESPONSE), headers: {"Content-Type"=> "application/json"})
+      to_return(status: 200, body: JSON.generate(stubbed_response), headers: {"Content-Type"=> "application/json"})
   end
 
   config.expect_with :rspec do |expectations|

@@ -2,7 +2,7 @@
 
 require 'book_query'
 
-describe 'BookQuery' do
+describe BookQuery do
   before(:each) do
     @book_query = BookQuery.new('Test')
   end

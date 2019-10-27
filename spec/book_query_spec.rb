@@ -15,12 +15,11 @@ describe 'BookQuery' do
   end
 
   describe '#get_books_list' do
-    it "returns a list of books" do
+    it 'returns a list of books' do
       books_list = @book_query.get_books_list
-      expect(books_list[0]).to eq({"title": "100 Flowers to Knit & Crochet",
-                                                  "author": "Lesley Stanfield",
-                                                  "publisher": "Macmillan"
-                                                  })
+      expect(books_list[0]).to eq("title": '100 Flowers to Knit & Crochet',
+                                  "author": 'Lesley Stanfield',
+                                  "publisher": 'Macmillan')
     end
   end
 end

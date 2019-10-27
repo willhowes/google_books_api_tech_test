@@ -7,7 +7,7 @@ API_KEY = open('config/.api_key').read
 class BookQuery
   include HTTParty
   base_uri 'https://www.googleapis.com/books/v1/'
-  
+
   def initialize(query)
     @query = query
     make_query
@@ -24,7 +24,7 @@ class BookQuery
   def make_query
     response = self.class.get("/volumes?q=#{@query}&maxResults=5&key=#{API_KEY}")
     books = JSON.parse(response.body)
-    add_to_books_list(books["items"])
+    add_to_books_list(books['items'])
     books['items']
   end
 
@@ -33,10 +33,10 @@ class BookQuery
   def add_to_books_list(books)
     books_list = []
     books.each do |book|
-      book = book["volumeInfo"]
-      book_details = {"title": book['title'],
-        "author": book["authors"].join(","), 
-        "publisher": book["publisher"]}
+      book = book['volumeInfo']
+      book_details = { "title": book['title'],
+                       "author": book['authors'].join(','),
+                       "publisher": book['publisher'] }
       books_list << book_details
     end
     set_books_list(books_list)

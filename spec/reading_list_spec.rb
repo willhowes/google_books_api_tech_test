@@ -6,9 +6,10 @@ require 'stringio'
 describe ReadingList do
   before(:each) do
     @reading_list = ReadingList.new
-    @book_query = double("book_query")
+    @book_query = double('book_query')
     $stdin = StringIO.new("flowers\n")
-    @books_stub = [{:title=>"100 Flowers to Knit & Crochet", :author=>"Lesley Stanfield", :publisher=>"Macmillan"}]
+    @books_stub = [{ title: '100 Flowers to Knit & Crochet', author: 'Lesley Stanfield', publisher: 'Macmillan' }]
+    @books_stub_2 = [{ title: 'Interpretative Phenomenological Analysis', author: 'Jonathan A Smith,Paul Flowers,Michael Larkin', publisher: 'SAGE' }]
   end
 
   after(:each) do
@@ -26,7 +27,14 @@ describe ReadingList do
   describe '#save_to_reading_list' do
     it 'saves a given book to the reading list' do
       @reading_list.save_to_reading_list(@books_stub[0])
-      expect(@reading_list.get_list).to eq([{:title=>"100 Flowers to Knit & Crochet", :author=>"Lesley Stanfield", :publisher=>"Macmillan"}])
+      expect(@reading_list.get_list).to eq([{ title: '100 Flowers to Knit & Crochet', author: 'Lesley Stanfield', publisher: 'Macmillan' }])
+    end
+
+    it 'can save more than one book to the reading list' do
+      @reading_list.save_to_reading_list(@books_stub[0])
+      @reading_list.save_to_reading_list(@books_stub_2[0])
+      expect(@reading_list.get_list).to eq([{ title: '100 Flowers to Knit & Crochet', author: 'Lesley Stanfield', publisher: 'Macmillan' },
+                                            { title: 'Interpretative Phenomenological Analysis', author: 'Jonathan A Smith,Paul Flowers,Michael Larkin', publisher: 'SAGE' }])
     end
   end
 end

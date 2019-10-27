@@ -3,9 +3,8 @@
 require_relative './book_query.rb'
 
 class ReadingList
-
-  def initialize 
-    @reading_list = []  
+  def initialize
+    @reading_list = []
   end
 
   def run
@@ -20,7 +19,7 @@ class ReadingList
   def make_query(query_text)
     BookQuery.new(query_text)
   end
-  
+
   def retreive_query_results(book_query)
     book_query.get_books_list
   end
@@ -30,7 +29,7 @@ class ReadingList
       print "#{index + 1}. #{book[:title]}\nAuthor: #{book[:author]}\nPublisher: #{book[:publisher]}\n-------------------------------\n"
     end
   end
-  
+
   def get_list
     @reading_list
   end

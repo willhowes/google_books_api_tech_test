@@ -5,22 +5,24 @@ require_relative './book_query.rb'
 class ReadingList
   def run
     puts 'Type the name of the book you want to search then hit enter:'
-    query_text = gets.chomp
-    book_query = BookQuery.new(query_text)
-    query_results = book_query.get_books_list
+    query_text = $stdin.gets.chomp
+    book_query = make_query(query_text)
+    query_results = retreive_query_results(book_query)
+    puts "\n---------------\nSearch results:\n---------------"
     print_search_result(query_results)
   end
 
+  def make_query(query_text)
+    BookQuery.new(query_text)
+  end
+  
+  def retreive_query_results(book_query)
+    book_query.get_books_list
+  end
+
   def print_search_result(books)
-    puts "\n"
-    puts '---------------'
-    puts 'Search results:'
-    puts '---------------'
     books.each_with_index do |book, index|
-      puts "#{index + 1}. #{book[:title]} "
-      puts "Author: #{book[:author]}"
-      puts "Publisher: #{book[:publisher]}"
-      puts '-------------------------------'
+      print "#{index + 1}. #{book[:title]}\nAuthor: #{book[:author]}\nPublisher: #{book[:publisher]}\n-------------------------------\n"
     end
   end
 end

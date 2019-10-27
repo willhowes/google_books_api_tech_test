@@ -44,7 +44,7 @@ class BookQuery
 end
 
 # COMMENTED CODE BELOW FOR TESTING AN ACTUAL API RESPONSE NOT STUBBED RESPONSE
-# google_books = BookQuery.new("Alice in Wonderland")
+# google_books = BookQuery.new("flowers")
 
 # books = google_books.get_books_list
 

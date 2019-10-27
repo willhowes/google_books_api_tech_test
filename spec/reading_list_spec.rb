@@ -17,24 +17,46 @@ describe ReadingList do
   end
 
   describe '#run' do
-    it 'asks the user for the name of a book to search' do
+    #(WIP) This test should handle a full user journey 
+    xit 'asks the user for the name of a book to search' do
       allow(@reading_list).to receive(:make_query).and_return(@book_query)
       allow(@reading_list).to receive(:retreive_query_results).and_return(@books_stub)
-      expect { @reading_list.run }.to output("Type the name of the book you want to search then hit enter:\n\n---------------\nSearch results:\n---------------\n1. 100 Flowers to Knit & Crochet\nAuthor: Lesley Stanfield\nPublisher: Macmillan\n-------------------------------\n").to_stdout
+      expect { @reading_list.run }.to output("Type the name of the book you want to search then hit enter:"\
+                                              "\n\n---------------\nSearch results:\n---------------\n"\
+                                              "1. 100 Flowers to Knit & Crochet\nAuthor: Lesley Stanfield\nPublisher: Macmillan"\
+                                              "\n-------------------------------\n").to_stdout
+    end
+  end
+
+  describe '#save_book_option' do
+    it "Asks user if they want to save a book to their reading list and handles a request with a valid input correctly" do
+      $stdin = StringIO.new("1\n")
+      expect { @reading_list.save_book_option(@books_stub) }.to output("If you would like to save a book to your reading list, enter the number and hit return."\
+                                                      "Otherwise please type 'exit' and hit return\n"\
+                                                      "Thank you.\n"\
+                                                      "#{@books_stub[0][:title]} saved to your reading list\n").to_stdout
+    
+
     end
   end
 
   describe '#save_to_reading_list' do
     it 'saves a given book to the reading list' do
       @reading_list.save_to_reading_list(@books_stub[0])
-      expect(@reading_list.get_list).to eq([{ title: '100 Flowers to Knit & Crochet', author: 'Lesley Stanfield', publisher: 'Macmillan' }])
+      expect(@reading_list.get_list).to eq([{ title: '100 Flowers to Knit & Crochet',
+                                              author: 'Lesley Stanfield',
+                                              publisher: 'Macmillan' }])
     end
 
     it 'can save more than one book to the reading list' do
       @reading_list.save_to_reading_list(@books_stub[0])
       @reading_list.save_to_reading_list(@books_stub_2[0])
-      expect(@reading_list.get_list).to eq([{ title: '100 Flowers to Knit & Crochet', author: 'Lesley Stanfield', publisher: 'Macmillan' },
-                                            { title: 'Interpretative Phenomenological Analysis', author: 'Jonathan A Smith,Paul Flowers,Michael Larkin', publisher: 'SAGE' }])
+      expect(@reading_list.get_list).to eq([{ title: '100 Flowers to Knit & Crochet',
+                                              author: 'Lesley Stanfield',
+                                              publisher: 'Macmillan' },
+                                            { title: 'Interpretative Phenomenological Analysis',
+                                              author: 'Jonathan A Smith,Paul Flowers,Michael Larkin',
+                                              publisher: 'SAGE' }])
     end
   end
 end

@@ -14,7 +14,22 @@ class ReadingList
     query_results = retreive_query_results(book_query)
     puts "\n---------------\nSearch results:\n---------------"
     print_search_result(query_results)
+    save_book_option(query_results)
   end
+
+  def save_book_option(query_results)
+    puts "If you would like to save a book to your reading list, enter the number and hit return."\
+    "Otherwise please type 'exit' and hit return"
+    book_no_to_save = $stdin.gets.chomp.to_i
+    puts "Thank you."
+    book_list = query_results
+    book_to_save = book_list[book_no_to_save -1]
+    save_to_reading_list(book_to_save)
+    updated_reading_list = get_list
+    puts "#{updated_reading_list.last[:title]} saved to your reading list"
+    # edge case to handle here: an invalid number or not a number at all
+  end
+
 
   def make_query(query_text)
     BookQuery.new(query_text)

@@ -18,6 +18,9 @@
 
 require 'webmock/rspec'
 require 'json'
+require 'simplecov'
+SimpleCov.start
+
 WebMock.disable_net_connect!(allow_localhost: true)
 
 file = File.open 'spec/stubbed_response.json'

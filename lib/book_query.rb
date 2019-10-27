@@ -43,10 +43,12 @@ class BookQuery
   end
 end
 
-## COMMENTED CODE BELOW FOR TESTING AN ACTUAL API RESPONSE NOT STUBBED RESPONSE
+# COMMENTED CODE BELOW FOR TESTING AN ACTUAL API RESPONSE NOT STUBBED RESPONSE
 # google_books = BookQuery.new("Alice in Wonderland")
 
-# books = google_books.books
+# books = google_books.get_books_list
+
+# p books
 
 # books.each_with_index do |book, index|
 #   puts "---BOOK NO: #{index + 1}----\n"

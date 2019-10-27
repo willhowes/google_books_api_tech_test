@@ -22,4 +22,11 @@ describe ReadingList do
       expect { @reading_list.run }.to output("Type the name of the book you want to search then hit enter:\n\n---------------\nSearch results:\n---------------\n1. 100 Flowers to Knit & Crochet\nAuthor: Lesley Stanfield\nPublisher: Macmillan\n-------------------------------\n").to_stdout
     end
   end
+
+  describe '#save_to_reading_list' do
+    it 'saves a given book to the reading list' do
+      @reading_list.save_to_reading_list(@books_stub[0])
+      expect(@reading_list.get_list).to eq([{:title=>"100 Flowers to Knit & Crochet", :author=>"Lesley Stanfield", :publisher=>"Macmillan"}])
+    end
+  end
 end

@@ -93,4 +93,37 @@ describe ReadingList do
                                               "3. Exit\n").to_stdout
     end
   end
+
+  describe "#view_reading_list" do
+    it("has a helpful message if no books have been added to the list") do
+      expect { @reading_list.view_reading_list }.to output("There are no book in your reading list currently\n").to_stdout
+    end
+
+    it("displays the reading list if there is one to display") do
+      allow(@reading_list).to receive(:get_list).and_return([{ title: '100 Flowers to Knit & Crochet', author: 'Lesley Stanfield', publisher: 'Macmillan' }])
+      expect { @reading_list.view_reading_list }.to output("\n--- READING LIST ---\n"\
+                                                            "1. 100 Flowers to Knit & Crochet | Author: Lesley Stanfield | Publisher: Macmillan\n"\
+                                                            "\n\nHit enter to return to the main menu\n").to_stdout
+
+    end
+  end
+
+  describe ('#valid menu option') do
+    it("returns true if 1, 2 or 3 is given") do
+      expect(@reading_list.valid_menu_option?("1")).to eq(true)
+      expect(@reading_list.valid_menu_option?("2")).to eq(true)
+      expect(@reading_list.valid_menu_option?("3")).to eq(true)
+    end
+    it("returns false if anything other than 1, 2 or 3 is given") do
+      expect(@reading_list.valid_menu_option?("")).to eq(false)
+      expect(@reading_list.valid_menu_option?("e")).to eq(false)
+      expect(@reading_list.valid_menu_option?("4")).to eq(false)
+    end
+  end
+
+  describe "#exit_program" do
+    it("Has a helpful message to tell user the program is quiting") do
+      expect{ @reading_list.exit_program }.to output("Exiting program...").to_stdout
+    end
+  end
 end

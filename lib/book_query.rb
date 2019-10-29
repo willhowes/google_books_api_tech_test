@@ -24,6 +24,10 @@ class BookQuery
   def make_query
     response = self.class.get("/volumes?q=#{@query}&maxResults=5&key=#{API_KEY}")
     books = JSON.parse(response.body)
+    if books["totalItems"] == 0
+      set_books_list("No search results")
+      return
+    end
     add_to_books_list(books['items'])
     books['items']
   end
@@ -35,7 +39,7 @@ class BookQuery
     books.each do |book|
       book = book['volumeInfo']
       book_details = { "title": book['title'],
-                       "author": book['authors'].join(','),
+                       "author": (book['authors'].nil? ? "" : book['authors'].join(',')),
                        "publisher": book['publisher'] }
       books_list << book_details
     end

@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-10-28T16:49:26+00:00">2019-10-28T16:49:26+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-10-29T08:08:06+00:00">2019-10-29T08:08:06+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">79.44%</span></span>
+    (<span class="covered_percent"><span class="red">71.93%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.56
+         1.46
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>107</b> relevant lines. 
-    <span class="green"><b>85</b> lines covered</span> and
-    <span class="red"><b>22</b> lines missed </span>
+    <b>114</b> relevant lines. 
+    <span class="green"><b>82</b> lines covered</span> and
+    <span class="red"><b>32</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#2f20a40b0c6b7e3e978d03e931c343d91e596a7b" class="src_link" title="lib/reading_list.rb">lib/reading_list.rb</a></td>
-        <td class="red strong">54.76 %</td>
-        <td>73</td>
-        <td>42</td>
-        <td>23</td>
-        <td>19</td>
-        <td>0.7</td>
+        <td class="red strong">38.64 %</td>
+        <td>76</td>
+        <td>44</td>
+        <td>17</td>
+        <td>27</td>
+        <td>0.5</td>
       </tr>
       
       <tr>
@@ -82,11 +82,11 @@
       
       <tr>
         <td class="strong"><a href="#aff3f155d545980ccbaf763c97ce1d423dd57c8c" class="src_link" title="spec/reading_list_spec.rb">spec/reading_list_spec.rb</a></td>
-        <td class="yellow strong">89.29 %</td>
-        <td>62</td>
+        <td class="yellow strong">84.85 %</td>
+        <td>72</td>
+        <td>33</td>
         <td>28</td>
-        <td>25</td>
-        <td>3</td>
+        <td>5</td>
         <td>1.4</td>
       </tr>
       
@@ -482,11 +482,11 @@
         <div class="source_table" id="2f20a40b0c6b7e3e978d03e931c343d91e596a7b">
   <div class="header">
     <h3>lib/reading_list.rb</h3>
-    <h4><span class="red">54.76 %</span> covered</h4>
+    <h4><span class="red">38.64 %</span> covered</h4>
     <div>
-      <b>42</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>19</b> lines missed.</span>
+      <b>44</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
+      <span class="red"><b>27</b> lines missed.</span>
     </div>
   </div>
   
@@ -529,8 +529,8 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="7">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="7">
+          <span class="hits">4</span>
           
           <code class="ruby">    @reading_list = []</code>
         </li>
@@ -613,8 +613,8 @@
           <code class="ruby">  def save_book_option(query_results)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="21">
+          
           
           <code class="ruby">    puts &quot;If you would like to save a book to your reading list, enter the number and hit return. &quot;\</code>
         </li>
@@ -625,38 +625,38 @@
           <code class="ruby">    &quot;Otherwise please type &#39;exit&#39; and hit return&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
           
           <code class="ruby">    book_no_to_save = get_user_input</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
           
           <code class="ruby">    book_no_to_save = book_no_to_save.to_i</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
           
           <code class="ruby">    book_list = query_results</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="26">
           
-          <code class="ruby">    until book_no_to_save &lt; book_list.length &amp;&amp; book_no_to_save &gt; 0</code>
+          
+          <code class="ruby">    until valid_book_no?(book_no_to_save, book_list)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
           
           <code class="ruby">      puts &quot;Invalid book number please try again:&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
           
           <code class="ruby">      book_no_to_save = get_user_input</code>
         </li>
@@ -721,211 +721,229 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">  def make_query(query_text)</code>
+          <code class="ruby">  def valid_book_no?(book_no, book_list)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="41">
+        <li class="covered" data-hits="2" data-linenumber="40">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    book_no &lt;= book_list.length &amp;&amp; book_no &gt; 0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">    BookQuery.new(query_text)</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">  def retreive_query_results(book_query)</code>
+          <code class="ruby">  def make_query(query_text)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
+        <li class="missed" data-hits="0" data-linenumber="44">
           
           
-          <code class="ruby">    book_query.get_books_list</code>
+          <code class="ruby">    BookQuery.new(query_text)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def retreive_query_results(book_query)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="48">
+          
+          
+          <code class="ruby">    book_query.get_books_list</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
           <code class="ruby">  def print_search_result(books)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="49">
+        <li class="missed" data-hits="0" data-linenumber="52">
           
           
           <code class="ruby">    books.each_with_index do |book, index|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="50">
+        <li class="missed" data-hits="0" data-linenumber="53">
           
           
           <code class="ruby">      print &quot;#{index + 1}. #{book[:title]}\nAuthor: #{book[:author]}\nPublisher: #{book[:publisher]}\n-------------------------------\n&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def get_list</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="55">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @reading_list</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="57">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
+        <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_list(reading_list)</code>
+          <code class="ruby">  def get_list</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="59">
+        <li class="covered" data-hits="2" data-linenumber="58">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @reading_list</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">    @reading_list = reading_list</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
+        <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
-          <code class="ruby">  def save_to_reading_list(book)</code>
+          <code class="ruby">  def set_list(reading_list)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="63">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="62">
           
-          <code class="ruby">    @reading_list &lt;&lt; book</code>
+          
+          <code class="ruby">    @reading_list = reading_list</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
-          <code class="ruby">  def get_user_input</code>
+          <code class="ruby">  def save_to_reading_list(book)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="67">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="66">
+          <span class="hits">3</span>
           
-          <code class="ruby">    $stdin.gets.chomp</code>
+          <code class="ruby">    @reading_list &lt;&lt; book</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="69">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def get_user_input</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="70">
+          
+          
+          <code class="ruby">    $stdin.gets.chomp</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby"># TO MANUALLY TEST THAT THE A REQUEST TO THE ACTUAL API WORKS</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby"># reading_list = ReadingList.new</code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"># TO MANUALLY TEST THAT THE A REQUEST TO THE ACTUAL API WORKS</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby"># reading_list = ReadingList.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby"># reading_list.run</code>
@@ -1108,11 +1126,11 @@
         <div class="source_table" id="aff3f155d545980ccbaf763c97ce1d423dd57c8c">
   <div class="header">
     <h3>spec/reading_list_spec.rb</h3>
-    <h4><span class="yellow">89.29 %</span> covered</h4>
+    <h4><span class="yellow">84.85 %</span> covered</h4>
     <div>
-      <b>28</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <b>33</b> relevant lines. 
+      <span class="green"><b>28</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -1161,32 +1179,32 @@
           <code class="ruby">  before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="8">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
           
           <code class="ruby">    @reading_list = ReadingList.new</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="9">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="9">
+          <span class="hits">4</span>
           
           <code class="ruby">    @book_query = double(&#39;book_query&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="10">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="10">
+          <span class="hits">4</span>
           
           <code class="ruby">    $stdin = StringIO.new(&quot;flowers\n&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="11">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="11">
+          <span class="hits">4</span>
           
           <code class="ruby">    @books_stub = [{ title: &#39;100 Flowers to Knit &amp; Crochet&#39;, author: &#39;Lesley Stanfield&#39;, publisher: &#39;Macmillan&#39; }]</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="12">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="12">
+          <span class="hits">4</span>
           
           <code class="ruby">    @books_stub_2 = [{ title: &#39;Interpretative Phenomenological Analysis&#39;, author: &#39;Jonathan A Smith,Paul Flowers,Michael Larkin&#39;, publisher: &#39;SAGE&#39; }]</code>
         </li>
@@ -1209,8 +1227,8 @@
           <code class="ruby">  after(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="16">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="16">
+          <span class="hits">4</span>
           
           <code class="ruby">    $stdin = STDIN</code>
         </li>
@@ -1308,17 +1326,17 @@
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;Asks user if they want to save a book to their reading list and handles a request with a valid input correctly&quot; do</code>
+          <code class="ruby">    xit &quot;Asks user if they want to save a book to their reading list and handles a request with a valid input correctly&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
           
           <code class="ruby">      $stdin = StringIO.new(&quot;1\n&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="34">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="34">
+          
           
           <code class="ruby">      expect { @reading_list.save_book_option(@books_stub) }.to output(&quot;If you would like to save a book to your reading list, enter the number and hit return.&quot;\</code>
         </li>
@@ -1374,118 +1392,178 @@
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;#save_to_reading_list&#39; do</code>
+          <code class="ruby">  describe &quot;#valid_book_no?&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;saves a given book to the reading list&#39; do</code>
+          <code class="ruby">    it &quot;returns true if the book no requested is valid&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">      @reading_list.save_to_reading_list(@books_stub[0])</code>
+          <code class="ruby">      expect(@reading_list.valid_book_no?(1, @books_stub)).to eq(true)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="46">
           
-          <code class="ruby">      expect(@reading_list.get_list).to eq([{ title: &#39;100 Flowers to Knit &amp; Crochet&#39;,</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">                                              author: &#39;Lesley Stanfield&#39;,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                                              publisher: &#39;Macmillan&#39; }])</code>
+          <code class="ruby">    it &quot;returns false if the book no requested is invalid&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      expect(@reading_list.valid_book_no?(2, @books_stub)).to eq(false)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;can save more than one book to the reading list&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      @reading_list.save_to_reading_list(@books_stub[0])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      @reading_list.save_to_reading_list(@books_stub_2[0])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(@reading_list.get_list).to eq([{ title: &#39;100 Flowers to Knit &amp; Crochet&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">                                              author: &#39;Lesley Stanfield&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby">                                              publisher: &#39;Macmillan&#39; },</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="57">
-          
-          
-          <code class="ruby">                                            { title: &#39;Interpretative Phenomenological Analysis&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby">                                              author: &#39;Jonathan A Smith,Paul Flowers,Michael Larkin&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">                                              publisher: &#39;SAGE&#39; }])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="60">
-          
-          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;#save_to_reading_list&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;saves a given book to the reading list&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @reading_list.save_to_reading_list(@books_stub[0])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(@reading_list.get_list).to eq([{ title: &#39;100 Flowers to Knit &amp; Crochet&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">                                              author: &#39;Lesley Stanfield&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">                                              publisher: &#39;Macmillan&#39; }])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;can save more than one book to the reading list&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="62">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @reading_list.save_to_reading_list(@books_stub[0])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @reading_list.save_to_reading_list(@books_stub_2[0])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(@reading_list.get_list).to eq([{ title: &#39;100 Flowers to Knit &amp; Crochet&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">                                              author: &#39;Lesley Stanfield&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">                                              publisher: &#39;Macmillan&#39; },</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">                                            { title: &#39;Interpretative Phenomenological Analysis&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">                                              author: &#39;Jonathan A Smith,Paul Flowers,Michael Larkin&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">                                              publisher: &#39;SAGE&#39; }])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">end</code>

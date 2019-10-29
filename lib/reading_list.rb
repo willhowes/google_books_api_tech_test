@@ -23,7 +23,7 @@ class ReadingList
     book_no_to_save = get_user_input
     book_no_to_save = book_no_to_save.to_i
     book_list = query_results
-    until book_no_to_save < book_list.length && book_no_to_save > 0
+    until valid_book_no?(book_no_to_save, book_list)
       puts "Invalid book number please try again:"
       book_no_to_save = get_user_input
       book_no_to_save = book_no_to_save.to_i
@@ -36,6 +36,9 @@ class ReadingList
     puts "#{updated_reading_list.last[:title]} saved to your reading list"
   end
 
+  def valid_book_no?(book_no, book_list)
+    book_no <= book_list.length && book_no > 0
+  end
 
   def make_query(query_text)
     BookQuery.new(query_text)

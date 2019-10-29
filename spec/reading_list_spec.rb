@@ -50,6 +50,19 @@ describe ReadingList do
     end
   end
 
+  describe "#valid_yes_no?" do
+    it "returns true for a input of 'y' or 'n'" do
+      expect(@reading_list.valid_yes_no?('y')).to eq(true)
+      expect(@reading_list.valid_yes_no?('n')).to eq(true)
+    end
+
+    it "returns false for anything other than 'y' or 'n'" do
+      expect(@reading_list.valid_yes_no?("")).to eq(false)
+      expect(@reading_list.valid_yes_no?("1")).to eq(false)
+      expect(@reading_list.valid_yes_no?("t")).to eq(false)
+    end
+  end
+
   describe '#save_to_reading_list' do
     it 'saves a given book to the reading list' do
       @reading_list.save_to_reading_list(@books_stub[0])
@@ -67,6 +80,16 @@ describe ReadingList do
                                             { title: 'Interpretative Phenomenological Analysis',
                                               author: 'Jonathan A Smith,Paul Flowers,Michael Larkin',
                                               publisher: 'SAGE' }])
+    end
+  end
+
+  describe "#main_menu" do
+    it("Has a helpful welcome message with the users options") do
+      expect { @reading_list.main_menu }.to output("--- WELCOME TO THE READING LIST APP ---\n"\
+                                              "----- MAIN MENU -----\n"\
+                                              "------ Options: ------\n"\
+                                              "1. Search for books\n"\
+                                              "2. View Reading List\n").to_stdout
     end
   end
 end

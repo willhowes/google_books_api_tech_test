@@ -89,7 +89,8 @@ describe ReadingList do
                                               "----- MAIN MENU -----\n"\
                                               "------ Options: ------\n"\
                                               "1. Search for books\n"\
-                                              "2. View Reading List\n").to_stdout
+                                              "2. View Reading List\n"\
+                                              "3. Exit\n").to_stdout
     end
   end
 end

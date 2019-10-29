@@ -12,7 +12,7 @@ class ReadingList
     "----- MAIN MENU -----\n"\
     "------ Options: ------\n"\
     "1. Search for books\n"\
-    "2. View Reading List\n"
+    "2. View Reading List\n"\
     "3. Exit\n"
   end
 
@@ -45,21 +45,10 @@ class ReadingList
     save_to_reading_list(book_to_save)
     updated_reading_list = get_list
     puts "#{updated_reading_list.last[:title]} saved to your reading list"
-    puts "Would you like to add another book to your list? (y/n)"
-    yes_no_input = get_user_input.downcase()
-    until valid_yes_no?(yes_no_input)
-      puts "Invalid option, please type 'y' for yes or 'n' for no:"
-      yes_no_input = get_user_input.downcase()
-    end
-    if yes_no_input == "y"
-      save_book_option(query_results)
-    end
-    if yes_no_input == "n"
-      sleep 1
-      puts "\nreturning to main menu...\n"
-      sleep 1
-      main_menu
-    end  
+    sleep 1
+    puts "\nreturning to main menu...\n"
+    sleep 1
+    main_menu
   end
 
   def valid_book_no?(book_no, book_list)
@@ -102,5 +91,5 @@ class ReadingList
 end
 
 # TO MANUALLY TEST THAT THE A REQUEST TO THE ACTUAL API WORKS
-# reading_list = ReadingList.new
-# reading_list.run
+reading_list = ReadingList.new
+reading_list.run
